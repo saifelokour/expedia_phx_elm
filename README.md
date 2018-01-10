@@ -1,4 +1,4 @@
-# ExpediaPhxElm
+# ExpediaPhxElm [![CircleCI](https://circleci.com/gh/saifelokour/expedia_phx_elm/tree/master.svg?style=svg)](https://circleci.com/gh/saifelokour/expedia_phx_elm/tree/master)
 
 To start your Phoenix server:
 
