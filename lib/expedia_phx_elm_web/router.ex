@@ -14,13 +14,14 @@ defmodule ExpediaPhxElmWeb.Router do
   end
 
   scope "/", ExpediaPhxElmWeb do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser 
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", ExpediaPhxElmWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", ExpediaPhxElmWeb.Api do
+    pipe_through :api
+
+    get "/offers", OffersController, :index
+  end
 end

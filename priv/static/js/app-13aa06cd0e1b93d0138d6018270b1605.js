@@ -14705,7 +14705,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	});
 	var _elm_lang$http$Http$stringPart = _elm_lang$http$Http$StringPart;
 
-	var _user$project$Hotel$hotelView = F2(function (model, url) {
+	var _user$project$Hotel$view = function _user$project$Hotel$view(model) {
 		return A2(_elm_lang$html$Html$div, {
 			ctor: '::',
 			_0: _elm_lang$html$Html_Attributes$class('hotel'),
@@ -14714,18 +14714,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			ctor: '::',
 			_0: A2(_elm_lang$html$Html$a, {
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$href(url),
+				_0: _elm_lang$html$Html_Attributes$href(model.hotelUrls.hotelInfositeUrl),
 				_1: { ctor: '[]' }
 			}, {
-				ctor: '::',
-				_0: A2(_elm_lang$html$Html$img, {
-					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$src(model.hotelInfo.hotelImageUrl),
-					_1: { ctor: '[]' }
-				}, { ctor: '[]' }),
-				_1: { ctor: '[]' }
-			}),
-			_1: {
 				ctor: '::',
 				_0: A2(_elm_lang$html$Html$strong, { ctor: '[]' }, {
 					ctor: '::',
@@ -14733,48 +14724,19 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 					_1: { ctor: '[]' }
 				}),
 				_1: { ctor: '[]' }
-			}
+			}),
+			_1: { ctor: '[]' }
 		});
-	});
-	var _user$project$Hotel$view = function _user$project$Hotel$view(model) {
-		var _p0 = _elm_lang$http$Http$decodeUri(model.hotelUrls.hotelInfositeUrl);
-		if (_p0.ctor === 'Just') {
-			return A2(_user$project$Hotel$hotelView, model, _p0._0);
-		} else {
-			return A2(_elm_lang$html$Html$div, { ctor: '[]' }, { ctor: '[]' });
-		}
 	};
-	var _user$project$Hotel$Model = F6(function (a, b, c, d, e, f) {
-		return { hotelInfo: a, hotelUrls: b, destination: c, hotelUrgencyInfo: d, hotelPricingInfo: e, offerDateRange: f };
+	var _user$project$Hotel$Model = F2(function (a, b) {
+		return { hotelInfo: a, hotelUrls: b };
 	});
 	var _user$project$Hotel$OfferDateRange = F3(function (a, b, c) {
 		return { lengthOfStay: a, travelStartDate: b, travelEndDate: c };
 	});
-	var _user$project$Hotel$decodeOfferDateRange = A4(_elm_lang$core$Json_Decode$map3, _user$project$Hotel$OfferDateRange, A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'lengthOfStay',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$int), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'travelStartDate',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$int)), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'travelEndDate',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$list(_elm_lang$core$Json_Decode$int)));
 	var _user$project$Hotel$Destination = F2(function (a, b) {
 		return { regionID: a, longName: b };
 	});
-	var _user$project$Hotel$decodeDestination = A3(_elm_lang$core$Json_Decode$map2, _user$project$Hotel$Destination, A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'regionID',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$string), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'longName',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$string));
 	var _user$project$Hotel$HotelInfo = F3(function (a, b, c) {
 		return { hotelName: a, hotelStarRating: b, hotelImageUrl: c };
 	});
@@ -14794,27 +14756,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var _user$project$Hotel$HotelUrgencyInfo = F2(function (a, b) {
 		return { numberOfRoomsLeft: a, almostSoldStatus: b };
 	});
-	var _user$project$Hotel$decodeHotelUrgencyInfo = A3(_elm_lang$core$Json_Decode$map2, _user$project$Hotel$HotelUrgencyInfo, A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'numberOfRoomsLeft',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$int), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'almostSoldStatus',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$string));
 	var _user$project$Hotel$HotelPricingInfo = F2(function (a, b) {
 		return { originalPricePerNight: a, currency: b };
 	});
-	var _user$project$Hotel$decodeHotelPricingInfo = A3(_elm_lang$core$Json_Decode$map2, _user$project$Hotel$HotelPricingInfo, A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'originalPricePerNight',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$float), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'currency',
-		_1: { ctor: '[]' }
-	}, _elm_lang$core$Json_Decode$string));
 	var _user$project$Hotel$HotelUrls = function _user$project$Hotel$HotelUrls(a) {
 		return { hotelInfositeUrl: a };
 	};
@@ -14837,26 +14781,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var _user$project$Components_Offers$renderOffers = function _user$project$Components_Offers$renderOffers(offers) {
 		return A2(_elm_lang$core$List$map, _user$project$Components_Offers$renderOffer, offers.offers);
 	};
-	var _user$project$Components_Offers$view = function _user$project$Components_Offers$view(model) {
-		return A2(_elm_lang$html$Html$div, {
-			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('Offers-list'),
-			_1: { ctor: '[]' }
-		}, {
-			ctor: '::',
-			_0: A2(_elm_lang$html$Html$h2, { ctor: '[]' }, {
-				ctor: '::',
-				_0: _elm_lang$html$Html$text('Offers List'),
-				_1: { ctor: '[]' }
-			}),
-			_1: {
-				ctor: '::',
-				_0: A2(_elm_lang$html$Html$ul, { ctor: '[]' }, _user$project$Components_Offers$renderOffers(model)),
-				_1: { ctor: '[]' }
-			}
-		});
-	};
-	var _user$project$Components_Offers$decodeHotelData = A7(_elm_lang$core$Json_Decode$map6, _user$project$Hotel$Model, A2(_elm_lang$core$Json_Decode$at, {
+	var _user$project$Components_Offers$decodeHotelData = A3(_elm_lang$core$Json_Decode$map2, _user$project$Hotel$Model, A2(_elm_lang$core$Json_Decode$at, {
 		ctor: '::',
 		_0: 'hotelInfo',
 		_1: { ctor: '[]' }
@@ -14864,23 +14789,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		ctor: '::',
 		_0: 'hotelUrls',
 		_1: { ctor: '[]' }
-	}, _user$project$Hotel$decodeHotelUrls), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'destination',
-		_1: { ctor: '[]' }
-	}, _user$project$Hotel$decodeDestination), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'hotelUrgencyInfo',
-		_1: { ctor: '[]' }
-	}, _user$project$Hotel$decodeHotelUrgencyInfo), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'hotelPricingInfo',
-		_1: { ctor: '[]' }
-	}, _user$project$Hotel$decodeHotelPricingInfo), A2(_elm_lang$core$Json_Decode$at, {
-		ctor: '::',
-		_0: 'offerDateRange',
-		_1: { ctor: '[]' }
-	}, _user$project$Hotel$decodeOfferDateRange));
+	}, _user$project$Hotel$decodeHotelUrls));
 	var _user$project$Components_Offers$decodeHotelList = _elm_lang$core$Json_Decode$list(_user$project$Components_Offers$decodeHotelData);
 	var _user$project$Components_Offers$decodeHotelsFetch = A2(_elm_lang$core$Json_Decode$at, {
 		ctor: '::',
@@ -14928,12 +14837,48 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		}
 	});
 	var _user$project$Components_Offers$Fetch = { ctor: 'Fetch' };
+	var _user$project$Components_Offers$view = function _user$project$Components_Offers$view(model) {
+		return A2(_elm_lang$html$Html$div, {
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('Offers-list'),
+			_1: { ctor: '[]' }
+		}, {
+			ctor: '::',
+			_0: A2(_elm_lang$html$Html$h2, { ctor: '[]' }, {
+				ctor: '::',
+				_0: _elm_lang$html$Html$text('Offers List'),
+				_1: { ctor: '[]' }
+			}),
+			_1: {
+				ctor: '::',
+				_0: A2(_elm_lang$html$Html$button, {
+					ctor: '::',
+					_0: _elm_lang$html$Html_Events$onClick(_user$project$Components_Offers$Fetch),
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$class('btn btn-primary'),
+						_1: { ctor: '[]' }
+					}
+				}, {
+					ctor: '::',
+					_0: _elm_lang$html$Html$text('Fetch Offers'),
+					_1: { ctor: '[]' }
+				}),
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html$ul, { ctor: '[]' }, _user$project$Components_Offers$renderOffers(model)),
+					_1: { ctor: '[]' }
+				}
+			}
+		});
+	};
 	var _user$project$Components_Offers$NoOp = { ctor: 'NoOp' };
 
 	var _user$project$Main$subscriptions = function _user$project$Main$subscriptions(model) {
 		return _elm_lang$core$Platform_Sub$none;
 	};
 	var _user$project$Main$initialModel = { offerListModel: _user$project$Components_Offers$initialModel };
+	var _user$project$Main$init = { ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: _elm_lang$core$Platform_Cmd$none };
 	var _user$project$Main$Model = function _user$project$Main$Model(a) {
 		return { offerListModel: a };
 	};
@@ -14951,12 +14896,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 			_1: A2(_elm_lang$core$Platform_Cmd$map, _user$project$Main$OffersMsg, cmd)
 		};
 	});
-	var _user$project$Main$init = function () {
-		var _p2 = A2(_user$project$Main$update, _user$project$Main$OffersMsg(_user$project$Components_Offers$Fetch), _user$project$Main$initialModel);
-		var updatedModel = _p2._0;
-		var cmd = _p2._1;
-		return { ctor: '_Tuple2', _0: _user$project$Main$initialModel, _1: cmd };
-	}();
 	var _user$project$Main$view = function _user$project$Main$view(model) {
 		return A2(_elm_lang$html$Html$div, {
 			ctor: '::',
@@ -15085,4 +15024,4 @@ require.alias("process/browser.js", "process");process = require('process');requ
 });})();require('___globals___');
 
 require('js/app');
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=./app.js-7e6b00bfe5ed7c300d9c2543d4d35d29.map
