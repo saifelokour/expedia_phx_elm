@@ -1,6 +1,7 @@
 /_build
 /deps
 /assets/node_modules
+/assets/elm/elm-stuff
 erl_crash.dump
 *.ez
 
