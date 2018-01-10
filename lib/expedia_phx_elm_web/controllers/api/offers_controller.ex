@@ -9,8 +9,9 @@ defmodule ExpediaPhxElmWeb.Api.OffersController do
     send_resp conn, 200, conn.assigns.payload
   end
 
-  defp get_expedia_offers conn, _opts do
-    %{body: payload} = HTTPoison.get!(@deals_uri)
+  defp get_expedia_offers %{query_params: query} = conn, _opts do
+    encoded_query = URI.encode_query(query)
+    %{body: payload} = HTTPoison.get!("#{@deals_uri}&#{encoded_query}")
       
     conn
     |> put_resp_header("content-type", "appilication/json")
