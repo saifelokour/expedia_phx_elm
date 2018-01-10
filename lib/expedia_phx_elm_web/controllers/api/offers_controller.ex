@@ -13,6 +13,7 @@ defmodule ExpediaPhxElmWeb.Api.OffersController do
     %{body: payload} = HTTPoison.get!(@deals_uri)
       
     conn
+    |> put_resp_header("content-type", "appilication/json")
     |> assign(:payload, payload)
   end
 end
