@@ -97,7 +97,18 @@ view model =
 
 hotelView : Model -> String -> Html a
 hotelView model url =
-  div [ class "hotel" ] [
-        a [ href url ] [ img [src model.hotelInfo.hotelImageUrl] [] ]
-      , strong [] [text model.hotelInfo.hotelName]
-      ] 
+  div [] [
+      div [ class "col-sm" ] [ a [ href url ] [ img [src model.hotelInfo.hotelImageUrl] [] ] ]
+    , div [ class "col-sm" ] [
+            strong [] [text model.hotelInfo.hotelName]
+          , br [] []
+          , text ("location: " ++ model.destination.longName)
+          , br [] []
+          , text ("rating: " ++ model.hotelInfo.hotelStarRating)
+          , br [] []
+          , text ("price per night: " ++ toString model.hotelPricingInfo.originalPricePerNight ++ " " ++ model.hotelPricingInfo.currency)
+          , br [] []
+          , text ("Number of Rooms Left: " ++ toString model.hotelUrgencyInfo.numberOfRoomsLeft)
+    ]
+    , br [] []
+  ]

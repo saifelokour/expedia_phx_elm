@@ -1,5 +1,5 @@
 module Components.Offers exposing (..)
-import Html exposing (Html, text, ul, li, div, h2, button)
+import Html exposing (Html, text, ul, li, div, h2, button, br)
 import Html.Attributes exposing (class)
 import Html.Events exposing (onClick)
 import List
@@ -72,7 +72,7 @@ decodeHotelData =
 
 renderOffer : Hotel.Model -> Html a
 renderOffer hotel =
-  li [ ] [ Hotel.view hotel ]
+  div [ class "row" ] [ Hotel.view hotel ]
 
 renderOffers : Model -> List (Html a)
 renderOffers offers =
@@ -85,6 +85,7 @@ initialModel =
 
 view : Model -> Html Msg
 view model =
-  div [ class "Offers-list" ]
-    [ h2 [] [ text "Offers List" ]
-    , ul [] (renderOffers model) ]
+  div [ class "container" ]
+    [ h2 [] [ text "Offers" ]
+    , br [] []
+    , div [] (renderOffers model) ]

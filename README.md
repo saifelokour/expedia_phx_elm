@@ -11,6 +11,6 @@ Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 Heroku: [https://expedia-phx-elm.herokuapp.com/](https://expedia-phx-elm.herokuapp.com/)
 
 ### TODO:
-- [ ] add more information to Hotel component
+- [x] add more information to Hotel component
 - [ ] create search bar component to make queries
 - [ ] add component for Flight deals

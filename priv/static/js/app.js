@@ -14706,33 +14706,81 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var _elm_lang$http$Http$stringPart = _elm_lang$http$Http$StringPart;
 
 	var _user$project$Hotel$hotelView = F2(function (model, url) {
-		return A2(_elm_lang$html$Html$div, {
+		return A2(_elm_lang$html$Html$div, { ctor: '[]' }, {
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('hotel'),
-			_1: { ctor: '[]' }
-		}, {
-			ctor: '::',
-			_0: A2(_elm_lang$html$Html$a, {
+			_0: A2(_elm_lang$html$Html$div, {
 				ctor: '::',
-				_0: _elm_lang$html$Html_Attributes$href(url),
+				_0: _elm_lang$html$Html_Attributes$class('col-sm'),
 				_1: { ctor: '[]' }
 			}, {
 				ctor: '::',
-				_0: A2(_elm_lang$html$Html$img, {
+				_0: A2(_elm_lang$html$Html$a, {
 					ctor: '::',
-					_0: _elm_lang$html$Html_Attributes$src(model.hotelInfo.hotelImageUrl),
+					_0: _elm_lang$html$Html_Attributes$href(url),
 					_1: { ctor: '[]' }
-				}, { ctor: '[]' }),
+				}, {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html$img, {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Attributes$src(model.hotelInfo.hotelImageUrl),
+						_1: { ctor: '[]' }
+					}, { ctor: '[]' }),
+					_1: { ctor: '[]' }
+				}),
 				_1: { ctor: '[]' }
 			}),
 			_1: {
 				ctor: '::',
-				_0: A2(_elm_lang$html$Html$strong, { ctor: '[]' }, {
+				_0: A2(_elm_lang$html$Html$div, {
 					ctor: '::',
-					_0: _elm_lang$html$Html$text(model.hotelInfo.hotelName),
+					_0: _elm_lang$html$Html_Attributes$class('col-sm'),
 					_1: { ctor: '[]' }
+				}, {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html$strong, { ctor: '[]' }, {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(model.hotelInfo.hotelName),
+						_1: { ctor: '[]' }
+					}),
+					_1: {
+						ctor: '::',
+						_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$html$Html$text(A2(_elm_lang$core$Basics_ops['++'], 'location: ', model.destination.longName)),
+							_1: {
+								ctor: '::',
+								_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+								_1: {
+									ctor: '::',
+									_0: _elm_lang$html$Html$text(A2(_elm_lang$core$Basics_ops['++'], 'rating: ', model.hotelInfo.hotelStarRating)),
+									_1: {
+										ctor: '::',
+										_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+										_1: {
+											ctor: '::',
+											_0: _elm_lang$html$Html$text(A2(_elm_lang$core$Basics_ops['++'], 'price per night: ', A2(_elm_lang$core$Basics_ops['++'], _elm_lang$core$Basics$toString(model.hotelPricingInfo.originalPricePerNight), A2(_elm_lang$core$Basics_ops['++'], ' ', model.hotelPricingInfo.currency)))),
+											_1: {
+												ctor: '::',
+												_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html$text(A2(_elm_lang$core$Basics_ops['++'], 'Number of Rooms Left: ', _elm_lang$core$Basics$toString(model.hotelUrgencyInfo.numberOfRoomsLeft))),
+													_1: { ctor: '[]' }
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}),
-				_1: { ctor: '[]' }
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+					_1: { ctor: '[]' }
+				}
 			}
 		});
 	});
@@ -14828,7 +14876,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 		offers: { ctor: '[]' }
 	};
 	var _user$project$Components_Offers$renderOffer = function _user$project$Components_Offers$renderOffer(hotel) {
-		return A2(_elm_lang$html$Html$li, { ctor: '[]' }, {
+		return A2(_elm_lang$html$Html$div, {
+			ctor: '::',
+			_0: _elm_lang$html$Html_Attributes$class('row'),
+			_1: { ctor: '[]' }
+		}, {
 			ctor: '::',
 			_0: _user$project$Hotel$view(hotel),
 			_1: { ctor: '[]' }
@@ -14840,19 +14892,23 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 	var _user$project$Components_Offers$view = function _user$project$Components_Offers$view(model) {
 		return A2(_elm_lang$html$Html$div, {
 			ctor: '::',
-			_0: _elm_lang$html$Html_Attributes$class('Offers-list'),
+			_0: _elm_lang$html$Html_Attributes$class('container'),
 			_1: { ctor: '[]' }
 		}, {
 			ctor: '::',
 			_0: A2(_elm_lang$html$Html$h2, { ctor: '[]' }, {
 				ctor: '::',
-				_0: _elm_lang$html$Html$text('Offers List'),
+				_0: _elm_lang$html$Html$text('Offers'),
 				_1: { ctor: '[]' }
 			}),
 			_1: {
 				ctor: '::',
-				_0: A2(_elm_lang$html$Html$ul, { ctor: '[]' }, _user$project$Components_Offers$renderOffers(model)),
-				_1: { ctor: '[]' }
+				_0: A2(_elm_lang$html$Html$br, { ctor: '[]' }, { ctor: '[]' }),
+				_1: {
+					ctor: '::',
+					_0: A2(_elm_lang$html$Html$div, { ctor: '[]' }, _user$project$Components_Offers$renderOffers(model)),
+					_1: { ctor: '[]' }
+				}
 			}
 		});
 	};
